@@ -38,7 +38,7 @@
     }
 
     function dataMapper(item) {
-      return [item.rawtimestamp, getValue(item.datasize)];
+      return [item.rawtimestamp - 100000000, getValue(item.datasize)];
     }
 
     var rangeTemplate = Handlebars.compile('{{min}} - {{max}}');
