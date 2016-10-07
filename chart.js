@@ -33,7 +33,7 @@
 
   $(function () {
     function dataMapperSecond(item) {
-      return [item.rawtimestamp, getValue(item.datasize)];
+      return [item.rawtimestamp * 1000, getValue(item.datasize)];
     }
 
     function dataMapper(item) {
