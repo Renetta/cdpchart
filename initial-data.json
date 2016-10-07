@@ -1,13 +1,25 @@
 [{
       "rawtimestamp": 1473949967000,
-      "datasize": 124380160
+      "datasize": 1187840
     }, {
       "rawtimestamp": 1473950098000,
-      "datasize": 1024786432
+      "datasize": 1187840
     }, {
       "rawtimestamp": 1473953680000,
-      "datasize": 512200704
+      "datasize": 1187840
     }, {
       "rawtimestamp": 1473954044000,
-      "datasize": 260677632
+      "datasize": 1187840
+    },{
+      "rawtimestamp": 1473969967000,
+      "datasize": 1187840
+    }, {
+      "rawtimestamp": 1473960098000,
+      "datasize": 1187840
+    }, {
+      "rawtimestamp": 14739753680000,
+      "datasize": 1187840
+    }, {
+      "rawtimestamp": 1473984044000,
+      "datasize": 1187840
     }]
