@@ -198,8 +198,8 @@
           newRange = $.extend(newRange, range);
         } else if (currentZoom === 1) {
           newRange = {
-            min: parseInt(selectePoint - (zoom.range / 2), 10),
-            max: parseInt(selectePoint + (zoom.range / 2), 10),
+            min: parseInt(selectePoint - (zoom.range / 2), 5),
+            max: parseInt(selectePoint + (zoom.range / 2), 5),
           };
         } else {
           var start = selectePoint - (selectePoint % zoom.range);
