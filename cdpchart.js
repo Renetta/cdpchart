@@ -50,12 +50,12 @@
 
     var chartDiv = $('#chart');
 
-    $.get('intial-data.json', function(res){
+    $.get('initial-data.json', function(res){
       var fullData = res.map(dataMapperSecond);
       var chart;
       var zoomData = [];
 
-      $.get('zoom-data.json', function(response){
+      $.get('second-data.json', function(response){
         zoomData = response.map(dataMapper);
       }, 'json');
 
