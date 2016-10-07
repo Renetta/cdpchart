@@ -12,6 +12,7 @@
   var values = ['0', '< 1K', '< 100K', '< 1M', '< 100M', '> 100M'];
 
   function getValue (value) {
+          console.log('data', value);
     if (value < 1024) {
       return 1;
     }
@@ -33,7 +34,6 @@
 
   $(function () {
     function dataMapperSecond(item) {
-      console.log('data', item);
       return [item.rawtimestamp * 1000, getValue(item.datasize)];
     }
 
