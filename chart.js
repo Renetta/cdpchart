@@ -33,6 +33,7 @@
 
   $(function () {
     function dataMapperSecond(item) {
+      console.log('data', item);
       return [item.rawtimestamp * 1000, getValue(item.datasize)];
     }
 
