@@ -155,8 +155,8 @@
         console.log('selected date', formatInputDate(value));
         document.getElementById("inputDate").value = formatInputDate(value);
         document.getElementById("inputTime").value = formatInputTime(value);
-//         document.getElementById("inputMS").value = formatInputMS(value);
-//         document.getElementById("inputMicro").value = formatInputMS(value);
+        document.getElementById("inputMS").value = formatInputMS(value);
+        document.getElementById("inputMicro").value = formatInputMS(value);
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
