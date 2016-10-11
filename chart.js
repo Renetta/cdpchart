@@ -143,7 +143,7 @@
           id: 'marker',
           color: 'red',
           width: 1,
-          value: value,
+          value: selectePoint,
           zIndex: 5,
         });
       }
@@ -220,7 +220,7 @@
           id: 'marker',
           color: 'red',
           width: 1,
-          value: value,
+          value: selectePoint,
           zIndex: 5,
         });
         currentZoom += timeDiff;
