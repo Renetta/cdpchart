@@ -43,13 +43,9 @@
     var rangeTemplate = Handlebars.compile('{{min}} - {{max}}');
     var graphRangeTemplate = Handlebars.compile('<b>Min: </b><span>{{min}}</span> <span class="pull-right"><b>Max:</b>{{max}}</span>');
 
-//     function formatDate(date) {
-//       return moment(date).format('YYYY-MM-DD HH:mm:ss SSS') + ' ' +
-//         parseInt((date - parseInt(date, 10)) * 1000, 10);
-//     }
-    
     function formatDate(date) {
-      return moment(date).format('YYYY-MM-DD HH:mm:ss SSS');
+      return moment(date).format('YYYY-MM-DD HH:mm:ss SSS') + ' ' +
+        parseInt((date - parseInt(date, 10)) * 1000, 10);
     }
     
     function formatInputDate(date) {
