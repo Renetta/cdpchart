@@ -116,6 +116,7 @@
       function getInputDate() {
         var inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
           ' ' + document.getElementById("inputMicro").value;
+        console.log(inputDate);
         return moment(inputDate).unix() * 1000;
       }
       
@@ -213,9 +214,9 @@
       }
       
       function changeZoom(timeDiff) {
-        if (!selectePoint) {
-          return;
-        }
+//         if (!selectePoint) {
+//           return;
+//         }
 
         inputDataPoint = getInputDate();
         selectePoint = inputDataPoint;
