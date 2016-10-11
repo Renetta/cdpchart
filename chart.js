@@ -37,8 +37,11 @@
       return [item.rawtimestamp * 1000, getValue(item.datasize)];
     }
 
+//     function dataMapper(item) {
+//       return [item.rawtimestamp - 100000000, getValue(item.datasize)];
+//     }
     function dataMapper(item) {
-      return [item.rawtimestamp - 100000000, getValue(item.datasize)];
+      return [item.rawtimestamp, getValue(item.datasize)];
     }
 
     var rangeTemplate = Handlebars.compile('{{min}} - {{max}}');
@@ -56,12 +59,12 @@
       var chart;
       var zoomData = [];
 
-//       $.get('second-data.json', function(response){
-//         zoomData = response.map(dataMapper);
-//       }, 'json');
       $.get('second-data.json', function(response){
-        zoomData = response;
+        zoomData = response.map(dataMapper);
       }, 'json');
+//       $.get('second-data.json', function(response){
+//         zoomData = response;
+//       }, 'json');
       var range = {
         min: 1473949967000,
         max: 1473950567000,
@@ -155,17 +158,17 @@
 //           chart.setSize(width, 200);
           chart.xAxis[0].setExtremes(newRange.min, newRange.max);
                       console.log('item', zoomData);
-//           var chartData = zoomData.filter(function(item) {
-//             return item[0] > newRange.min && item[0] < newRange.max;
-//           });
-          
-          var chartData = zoomData && zoomData.filter(function(item) {
-              return item && item.rawtimestamp;
-          }).map(function(item) {
-              if (item.rawtimestamp > newRange.min && item.rawtimestamp < newRange.max) {
-                  return [item.rawtimestamp, item.datasize];
-              }
+          var chartData = zoomData.filter(function(item) {
+            return item[0] > newRange.min && item[0] < newRange.max;
           });
+          
+//           var chartData = zoomData && zoomData.filter(function(item) {
+//               return item && item.rawtimestamp;
+//           }).map(function(item) {
+//               if (item.rawtimestamp > newRange.min && item.rawtimestamp < newRange.max) {
+//                   return [item.rawtimestamp, item.datasize];
+//               }
+//           });
           console.log('chartData', chartData);
           chart.addSeries(getSeries(chartData));
         }
