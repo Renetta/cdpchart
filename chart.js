@@ -216,6 +216,7 @@
         selectePoint = inputDataPoint;
         $selectedDate.text(formatDate(selectePoint));
         var axis = chart.xAxis[0];
+        axis.removePlotLine('marker');
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
