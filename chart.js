@@ -208,9 +208,8 @@
 //           var sec = d.getSecons();
 //           var millisec = d.getMilliseconds();
 //           var time = (year << 24) | (month << 18) | (day << 12) | (hour << 6) | min | sec | millisec;
-        var datum = Date.parse(d);
-   console('parse', datum/1000);
-        console.log('moment', moment(d).getTime());
+
+        console.log('moment', moment(d).calendar());
           var myDate= d;
           myDate=myDate.split("-");
           var newDate=myDate[1]+","+myDate[0]+","+myDate[2];
