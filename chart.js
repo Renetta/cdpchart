@@ -118,6 +118,7 @@
       }
 
       function getSeries(data) {
+        console.log('newData', data);
         return {
           name: 'IOs',
           data: data,
@@ -148,7 +149,8 @@
           chart.addSeries(getSeries(fullData));
           chart.redraw();
         } else {
-          chart.setSize(3000, 200);
+//           chart.setSize(3000, 200);
+          chart.setSize(width, 200);
           chart.xAxis[0].setExtremes(newRange.min, newRange.max);
           var chartData = zoomData.filter(function(item) {
             return item[0] >= newRange.min && item[0] <= newRange.max;
