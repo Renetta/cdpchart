@@ -211,7 +211,7 @@
           var myDate= d;
           myDate=myDate.split("-");
           var newDate=myDate[1]+","+myDate[0]+","+myDate[2];
-          console.log((new Date(newDate).getTime());
+          console.log((new Date(newDate).getTime()));
           return time;
       };
               
