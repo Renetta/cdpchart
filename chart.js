@@ -30,6 +30,11 @@
 
     return 5;
   }
+//   var $inputDate = $('.inputDate');
+//   function getInputDate() {
+//     inputDate = document.getElementById('inputDate').value;
+//     console.log('input', inputDate);
+//   }
 
   $(function () {
     function dataMapperSecond(item) {
@@ -97,7 +102,12 @@
       var $selectedZoom = $('.zoom');
       var currentZoom = 0;
       var selectePoint = null;
-
+      
+      function getInputDate() {
+        inputDate = document.getElementById('inputDate').value;
+        console.log('inputsdfsd', inputDate);
+      }
+      
       function clickHandler(evt) {
         var axis = chart.xAxis[0];
         axis.removePlotLine('marker');
@@ -123,10 +133,6 @@
         });
       }
       
-      function getDate() {
-        inputDate = document.getElementById('inputDate');
-      }
-
       function getSeries(data) {
         return {
           name: 'IOs',
