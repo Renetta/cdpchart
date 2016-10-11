@@ -30,11 +30,6 @@
 
     return 5;
   }
-//   var $inputDate = $('.inputDate');
-//   function getInputDate() {
-//     var inputDate = document.getElementById('inputDate').value;
-//     console.log('input', inputDate);
-//   }
 
   $(function () {
     function dataMapperSecond(item) {
@@ -54,7 +49,7 @@
     }
     
     function formatInputDate(date) {
-      return moment(date).format('YYYY-MM-DD') + ' ' +
+      return moment(date).format('YYYY-MM-dd') + ' ' +
         parseInt((date - parseInt(date, 10)) * 1000, 10);
     }
 
