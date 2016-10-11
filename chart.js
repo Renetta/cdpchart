@@ -12,7 +12,6 @@
   var values = ['0', '< 1K', '< 100K', '< 1M', '< 100M', '> 100M'];
 
   function getValue (value) {
-    console.log('data', value);
     if (value < 1024) {
       return 1;
     }
@@ -37,11 +36,8 @@
       return [item.rawtimestamp * 1000, getValue(item.datasize)];
     }
 
-//     function dataMapper(item) {
-//       return [item.rawtimestamp - 100000000, getValue(item.datasize)];
-//     }
     function dataMapper(item) {
-      return [item.rawtimestamp, getValue(item.datasize)];
+      return [item.rawtimestamp - 100000000, getValue(item.datasize)];
     }
 
     var rangeTemplate = Handlebars.compile('{{min}} - {{max}}');
@@ -62,12 +58,10 @@
       $.get('second-data.json', function(response){
         zoomData = response.map(dataMapper);
       }, 'json');
-//       $.get('second-data.json', function(response){
-//         zoomData = response;
-//       }, 'json');
+
       var range = {
-        min: 1473949967000,
-        max: 1473950567000,
+        min: 1471533282000,
+        max: 1474404238000,
       };
 
       var zoomList = [{
@@ -123,7 +117,6 @@
       }
 
       function getSeries(data) {
-        console.log('newData', data);
         return {
           name: 'IOs',
           data: data,
@@ -155,21 +148,10 @@
           chart.redraw();
         } else {
           chart.setSize(3000, 200);
-//           chart.setSize(width, 200);
           chart.xAxis[0].setExtremes(newRange.min, newRange.max);
-                      console.log('item', zoomData);
           var chartData = zoomData.filter(function(item) {
-            return item[0] > newRange.min && item[0] < newRange.max;
+            return item[0] >= newRange.min && item[0] <= newRange.max;
           });
-          
-//           var chartData = zoomData && zoomData.filter(function(item) {
-//               return item && item.rawtimestamp;
-//           }).map(function(item) {
-//               if (item.rawtimestamp > newRange.min && item.rawtimestamp < newRange.max) {
-//                   return [item.rawtimestamp, item.datasize];
-//               }
-//           });
-          console.log('chartData', chartData);
           chart.addSeries(getSeries(chartData));
         }
 
@@ -214,13 +196,9 @@
         if (currentZoom === 0) {
           newRange = $.extend(newRange, range);
         } else if (currentZoom === 1) {
-          console.log('min', parseInt(selectePoint - (zoom.range / 2), 5));
-          console.log('max', parseInt(selectePoint + (zoom.range / 2), 5));
-           console.log('min', parseInt(selectePoint));
-          console.log('max', parseInt(selectePoint + (zoom.range)));
           newRange = {
-            min: parseInt(selectePoint),
-            max: parseInt(selectePoint + (zoom.range)),
+            min: parseInt(selectePoint - (zoom.range / 2), 10),
+            max: parseInt(selectePoint + (zoom.range / 2), 10),
           };
         } else {
           var start = selectePoint - (selectePoint % zoom.range);
@@ -237,8 +215,7 @@
         if (newRange.max > range.max) {
           newRange.max = range.max;
         }
-        console.log('newmin', formatDate(newRange.min));
-        console.log('newmax', formatDate(newRange.max));
+
         $('.graph-range').html(graphRangeTemplate({
           min: formatDate(newRange.min),
           max: formatDate(newRange.max),
