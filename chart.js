@@ -49,8 +49,7 @@
     }
     
     function formatInputDate(date) {
-      console.log('here', moment(date).format('YYYY-MM-DD') + '' +
-        parseInt((date - parseInt(date)) * 1000));
+      console.log('here', moment(date).format('YYYY-MM-DD'));
       return moment(date).format('YYYY-MM-DD') + ' ' +
         parseInt((date - parseInt(date, 10)) * 1000, 10);
     }
