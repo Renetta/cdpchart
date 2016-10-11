@@ -22,7 +22,7 @@
     <div class="form-group">
         Journal Timestamp:
       <div class="col-sm-2"  style="padding-right: 0">
-          <input type="text" bs-datepicker ng-model="formItem.cdpDate" 
+          <input type="text" class="form-control" bs-datepicker ng-model="formItem.cdpDate" 
                  ng-change="cdpJournalName(formItem.cdpDate,formItem.cdpMilliSeconds,formItem.cdpMicroSeconds)" 
                  min-date="{{journalRange.minDate.getTime()}}" max-date="{{journalRange.maxDate.getTime()}}" 
                  date-format="yyyy-MM-dd" name="cdpTimestamp"/>
