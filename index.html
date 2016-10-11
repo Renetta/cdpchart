@@ -32,10 +32,6 @@
                    placeholder="Time" />
         </div>
       <div class="col-sm-2" style="padding: 0 5px">
-          <input type="text" class="form-control" time-format="HH:mm:ss"
-              bs-timepicker ng-model="formItem.cdpDate" placeholder="Time" />
-      </div>
-      <div class="col-sm-2" style="padding: 0 5px">
           <input type="number" ng-pattern="patterns.number && patterns.noDecimal" ng-model="formItem.cdpMilliSeconds"
                  ng-change="cdpJournalName(formItem.cdpDate,formItem.cdpMilliSeconds,formItem.cdpMicroSeconds)" min="0" max="999"
               class="form-control" placeholder="Milliseconds" />
