@@ -47,6 +47,11 @@
       return moment(date).format('YYYY-MM-DD HH:mm:ss SSS') + ' ' +
         parseInt((date - parseInt(date, 10)) * 1000, 10);
     }
+    
+    function formatInputDate(date) {
+      return moment(date).format('YYYY-MM-DD') + ' ' +
+        parseInt((date - parseInt(date, 10)) * 1000, 10);
+    }
 
     var chartDiv = $('#chart');
 
@@ -106,7 +111,7 @@
 
         selectePoint = value;
         $selectedDate.text(formatDate(value));
-        console.log('selected date', formatDate(value));
+        console.log('selected date', formatInputDate(value));
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
