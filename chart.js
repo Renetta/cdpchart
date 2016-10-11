@@ -199,15 +199,19 @@
         }, 200);
       }
       
-      function dateToTimeStamp(d, t) {
-          var year = d.getFullYear() - 2000;
-          var month = d.getMonth();
-          var day = d.getDate();
-          var hour = d.getHours();
-          var min = d.getMinutes();
-          var sec = d.getSecons();
-          var millisec = d.getMilliseconds();
-          var time = (year << 24) | (month << 18) | (day << 12) | (hour << 6) | min | sec | millisec;
+      function dateToTimeStamp(d) {
+//           var year = d.getFullYear() - 2000;
+//           var month = d.getMonth();
+//           var day = d.getDate();
+//           var hour = d.getHours();
+//           var min = d.getMinutes();
+//           var sec = d.getSecons();
+//           var millisec = d.getMilliseconds();
+//           var time = (year << 24) | (month << 18) | (day << 12) | (hour << 6) | min | sec | millisec;
+          var myDate= d;
+          myDate=myDate.split("-");
+          var newDate=myDate[1]+","+myDate[0]+","+myDate[2];
+          console.log((new Date(newDate).getTime());
           return time;
       };
               
