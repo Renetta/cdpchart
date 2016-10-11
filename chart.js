@@ -111,31 +111,31 @@
       var $selectedZoom = $('.zoom');
       var currentZoom = 0;
       var selectePoint = null;
+      var inputDataPoint = null;
+
+//       $('inputDate').on('click', function() {
+//         $inputDate = document.getElementById('inputDate').value;
+//         console.log('inputsdfsd', $inputDate);
+//       });
       
-      function getInputDate() {
-        inputDate = document.getElementById('inputDate').value;
-        console.log('inputsdfsd', inputDate);
-      }
+//       $('inputTime').on('click', function() {
+//         $inputTime = document.getElementById('inputTime').value;
+//         console.log('inputsdfsd', $inputTime);
+//       });
       
-      $('inputDate').on('click', function() {
-        $inputDate = document.getElementById('inputDate').value;
-        console.log('inputsdfsd', $inputDate);
-      });
+//       $('inputMS').on('click', function() {
+//         $inputMS = document.getElementById('inputMS').value;
+//         console.log('inputsdfsd', $inputMS);
+//       });
       
-      $('inputTime').on('click', function() {
-        $inputTime = document.getElementById('inputTime').value;
-        console.log('inputsdfsd', $inputTime);
-      });
+//        $('inputMicro').on('click', function() {
+//         $inputMS = document.getElementById('inputMicro').value;
+//         console.log('inputsdfsd', $inputMicro);
+//       });
       
-      $('inputMS').on('click', function() {
-        $inputMS = document.getElementById('inputMS').value;
-        console.log('inputsdfsd', $inputMS);
-      });
-      
-       $('inputMicro').on('click', function() {
-        $inputMS = document.getElementById('inputMicro').value;
-        console.log('inputsdfsd', $inputMicro);
-      });
+//       $('button.inputData').on('click', function(){
+//         changeZoom(-1);
+//       });
       
       function clickHandler(evt) {
         var axis = chart.xAxis[0];
@@ -151,7 +151,6 @@
 
         selectePoint = value;
         $selectedDate.text(formatDate(value));
-        console.log('selected date', formatInputDate(value));
         document.getElementById("inputDate").value = formatInputDate(value);
         document.getElementById("inputTime").value = formatInputTime(value);
         document.getElementById("inputMS").value = formatInputMS(value);
@@ -223,11 +222,19 @@
           chartDiv.scrollLeft(left);
         }, 200);
       }
-
+              
+      function getInputDate() {
+        inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
+          ' ' + document.getElementById("inputMicro").value;
+        console.log('inputsdfsd', inputDate);
+      }
+      
       function changeZoom(timeDiff) {
         if (!selectePoint) {
           return;
         }
+        
+        inputDataPoint = getInputDate();
 
         currentZoom += timeDiff;
         if (currentZoom > zoomList.length - 1) {
