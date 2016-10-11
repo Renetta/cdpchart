@@ -155,8 +155,16 @@
           chart.setSize(width, 200);
           chart.xAxis[0].setExtremes(newRange.min, newRange.max);
                       console.log('item', zoomData);
-          var chartData = zoomData.filter(function(item) {
-            return item[0] > newRange.min && item[0] < newRange.max;
+//           var chartData = zoomData.filter(function(item) {
+//             return item[0] > newRange.min && item[0] < newRange.max;
+//           });
+          
+          var chartData = zoomData && zoomData.filter(function(item) {
+              return item && item.rawtimestamp;
+          }).map(function(item) {
+              if (item.rawtimestamp > newRange.min && item.rawtimestamp < newRange.max) {
+                  return [item.rawtimestamp, item.datasize];
+              }
           });
           console.log('chartData', chartData);
           chart.addSeries(getSeries(chartData));
