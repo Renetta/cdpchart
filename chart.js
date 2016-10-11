@@ -57,11 +57,10 @@
     }
     
     function formatInputMS(date) {
-      return moment(date).format('SS');
+      return moment(date).format('SSS');
     }
     
     function formatInputMicro(date) {
-//       return moment(date).format('S');
         return parseInt((date - parseInt(date, 10)) * 1000, 10);
     }
 
