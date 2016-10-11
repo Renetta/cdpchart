@@ -50,13 +50,11 @@
     
     function formatInputDate(date) {
       console.log('here', moment(date).format('YYYY-MM-DD'));
-      return moment(date).format('YYYY-MM-DD') + ' ' +
-        parseInt((date - parseInt(date, 10)) * 1000, 10);
+      return moment(date).format('YYYY-MM-DD');
     }
     
     function formatInputTime(date) {
-      return moment(date).format('HH:mm:ss') + ' ' +
-        parseInt((date - parseInt(date, 10)) * 1000, 10);
+      return moment(date).format('HH:mm:ss');
     }
     
 //     function formatInputMS(date) {
