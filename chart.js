@@ -199,37 +199,19 @@
         }, 200);
       }
       
-      function dateToTimeStamp(d) {
-//           var year = d.getFullYear() - 2000;
-//           var month = d.getMonth();
-//           var day = d.getDate();
-//           var hour = d.getHours();
-//           var min = d.getMinutes();
-//           var sec = d.getSecons();
-//           var millisec = d.getMilliseconds();
-//           var time = (year << 24) | (month << 18) | (day << 12) | (hour << 6) | min | sec | millisec;
-
-        console.log('moment', moment(d).unix());
-          var myDate= d;
-          myDate=myDate.split("-");
-          var newDate=myDate[1]+","+myDate[0]+","+myDate[2];
-          console.log(myDate);
-//           return time;
-      };
-              
       function getInputDate() {
         var inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
           ' ' + document.getElementById("inputMicro").value;
-        console.log('inputsdfsd', dateToTimeStamp(inputDate));
+        return moment(inputDate).unix() * 1000;
       }
       
       function changeZoom(timeDiff) {
         if (!selectePoint) {
           return;
         }
-        console.log('selectePoint', selectePoint);
-        inputDataPoint = getInputDate();
 
+        inputDataPoint = getInputDate();
+        selectePoint = inputDataPoint;
         currentZoom += timeDiff;
         if (currentZoom > zoomList.length - 1) {
           currentZoom = zoomList.length - 1;
