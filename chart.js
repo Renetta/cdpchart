@@ -49,7 +49,17 @@
     }
     
     function formatInputDate(date) {
-      return moment(date).format('YYYY-MM-dd') + ' ' +
+      return moment(date).format('YYYY-MM-DD') + ' ' +
+        parseInt((date - parseInt(date, 10)) * 1000, 10);
+    }
+    
+    function formatInputTime(date) {
+      return moment(date).format('HH:mm:ss') + ' ' +
+        parseInt((date - parseInt(date, 10)) * 1000, 10);
+    }
+    
+    function formatInputMS(date) {
+      return moment(date).format('SSS') + ' ' +
         parseInt((date - parseInt(date, 10)) * 1000, 10);
     }
 
@@ -94,6 +104,8 @@
 
       var $selectedDate = $('.selected-point .date');
       var $inputDate = $('.inputDate');
+      var $inputTime = $('.inputTime');
+      var $inputMS = $('.inputMS');
       var $selectedZoom = $('.zoom');
       var currentZoom = 0;
       var selectePoint = null;
@@ -105,7 +117,17 @@
       
       $('inputDate').on('click', function() {
         $inputDate = document.getElementById('inputDate').value;
-        console.log('inputsdfsd', inputDate);
+        console.log('inputsdfsd', $inputDate);
+      });
+      
+      $('inputTime').on('click', function() {
+        $inputTime = document.getElementById('inputTime').value;
+        console.log('inputsdfsd', $inputTime);
+      });
+      
+      $('inputMS').on('click', function() {
+        $inputMS = document.getElementById('inputMS').value;
+        console.log('inputsdfsd', $inputMS);
       });
       
       function clickHandler(evt) {
@@ -125,6 +147,8 @@
         console.log('selected date', formatInputDate(value));
 //         $inputDate.text(formatInputDate(value));
         document.getElementById("inputDate").value = formatInputDate(value);
+        document.getElementById("inputTime").value = formatInputTime(value);
+        document.getElementById("inputMS").value = formatInputMS(value);
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
