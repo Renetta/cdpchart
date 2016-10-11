@@ -199,7 +199,7 @@
         } else if (currentZoom === 1) {
           console.log('min', parseInt(selectePoint - (zoom.range / 2), 5));
           console.log('max', parseInt(selectePoint + (zoom.range / 2), 5));
-           console.log('min', parseInt(selectePoint, 5));
+           console.log('min', parseInt(selectePoint));
           console.log('max', parseInt(selectePoint + (zoom.range / 2), 5));
           newRange = {
             min: parseInt(selectePoint, 5),
@@ -220,7 +220,7 @@
         if (newRange.max > range.max) {
           newRange.max = range.max;
         }
-
+        console.log('new', newRange);
         $('.graph-range').html(graphRangeTemplate({
           min: formatDate(newRange.min),
           max: formatDate(newRange.max),
