@@ -59,6 +59,11 @@
     }
     
     function formatInputMS(date) {
+      return moment(date).format('SS') + ' ' +
+        parseInt((date - parseInt(date, 10)) * 1000, 10);
+    }
+    
+    function formatInputMS(date) {
       return moment(date).format('SSS') + ' ' +
         parseInt((date - parseInt(date, 10)) * 1000, 10);
     }
@@ -106,6 +111,7 @@
       var $inputDate = $('.inputDate');
       var $inputTime = $('.inputTime');
       var $inputMS = $('.inputMS');
+      var $inputMicro = $('.inputMicro');
       var $selectedZoom = $('.zoom');
       var currentZoom = 0;
       var selectePoint = null;
@@ -130,6 +136,11 @@
         console.log('inputsdfsd', $inputMS);
       });
       
+       $('inputMicro').on('click', function() {
+        $inputMS = document.getElementById('inputMicro').value;
+        console.log('inputsdfsd', $inputMicro);
+      });
+      
       function clickHandler(evt) {
         var axis = chart.xAxis[0];
         axis.removePlotLine('marker');
@@ -149,6 +160,7 @@
         document.getElementById("inputDate").value = formatInputDate(value);
         document.getElementById("inputTime").value = formatInputTime(value);
         document.getElementById("inputMS").value = formatInputMS(value);
+        document.getElementById("inputMicro").value = formatInputMS(value);
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
