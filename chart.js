@@ -119,9 +119,21 @@
         return moment(inputDate).unix() * 1000;
       }
       
+      function plotSelectedPoint(point) {
+        var axis = chart.xAxis[0];
+        axis.removePlotLine('marker');
+        $selectedDate.text(formatDate(point));
+        axis.addPlotLine({
+          id: 'marker',
+          color: 'red',
+          width: 1,
+          value: point,
+          zIndex: 5,
+        });
+      }
+      
       function clickHandler(evt) {
         var axis = chart.xAxis[0];
-        console.log('axis', axis);
         axis.removePlotLine('marker');
         var value;
         if (evt.xAxis) {
@@ -138,14 +150,7 @@
         document.getElementById("inputMS").value = formatInputMS(value);
         document.getElementById("inputMicro").value = formatInputMicro(value);
         selectePoint = getInputDate();
-        $selectedDate.text(formatDate(selectePoint));
-        axis.addPlotLine({
-          id: 'marker',
-          color: 'red',
-          width: 1,
-          value: selectePoint,
-          zIndex: 5,
-        });
+        plotSelectedPoint(selectePoint);
       }
       
       function getSeries(data) {
@@ -214,16 +219,7 @@
 
         inputDataPoint = getInputDate();
         selectePoint = inputDataPoint;
-        $selectedDate.text(formatDate(selectePoint));
-        var axis = chart.xAxis[0];
-        axis.removePlotLine('marker');
-        axis.addPlotLine({
-          id: 'marker',
-          color: 'red',
-          width: 1,
-          value: selectePoint,
-          zIndex: 5,
-        });
+        plotSelectedPoint(selectePoint);
         currentZoom += timeDiff;
         if (currentZoom > zoomList.length - 1) {
           currentZoom = zoomList.length - 1;
