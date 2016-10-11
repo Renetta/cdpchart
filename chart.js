@@ -106,7 +106,7 @@
 
         selectePoint = value;
         $selectedDate.text(formatDate(value));
-        console.log('selected date', $selectedDate);
+        console.log('selected date', formatDate(value));
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
