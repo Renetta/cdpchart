@@ -208,12 +208,12 @@
 //           var sec = d.getSecons();
 //           var millisec = d.getMilliseconds();
 //           var time = (year << 24) | (month << 18) | (day << 12) | (hour << 6) | min | sec | millisec;
-        console.log('moment', moment(d));
+        console.log('moment', moment(d).getTime());
           var myDate= d;
           myDate=myDate.split("-");
           var newDate=myDate[1]+","+myDate[0]+","+myDate[2];
-          console.log((new Date(newDate).getTime()));
-          return time;
+          console.log(myDate);
+//           return time;
       };
               
       function getInputDate() {
