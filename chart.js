@@ -49,7 +49,7 @@
     }
     
     function formatInputDate(date) {
-      console.log('here', moment(date).format('YYYY-MM-DD'));
+      console.log('here', moment(date).format('S'));
       return moment(date).format('YYYY-MM-DD');
     }
     
@@ -62,7 +62,7 @@
     }
     
     function formatInputMS(date) {
-      return moment(date).format('SSS');
+      return moment(date).format('S');
     }
 
     var chartDiv = $('#chart');
