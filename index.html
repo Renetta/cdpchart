@@ -19,12 +19,10 @@
       </span>
     </div>
     <div>
-        <label class="col-sm-3 control-label">Journal Timestamp</label>
-      <div class="col-sm-2" style="padding-right: 0">
-          <input type="text"  class="form-control" bs-datepicker
-           ng-model="formItem.cdpDate" ng-change="cdpJournalName(formItem.cdpDate,formItem.cdpMilliSeconds,formItem.cdpMicroSeconds)" min-date="{{journalRange.minDate.getTime()}}"
-            max-date="{{journalRange.maxDate.getTime()}}"
-            date-format="yyyy-MM-dd" name="cdpTimestamp"/>
+        Journal Timestamp:
+      <div style="padding-right: 0">
+          <input type="text" bs-datepicker ng-model="formItem.cdpDate" ng-change="cdpJournalName(formItem.cdpDate,formItem.cdpMilliSeconds,formItem.cdpMicroSeconds)" min-date="{{journalRange.minDate.getTime()}}"
+            max-date="{{journalRange.maxDate.getTime()}}" date-format="yyyy-MM-dd" name="cdpTimestamp"/>
       </div>
     </div>
     <div id="chart"></div>
