@@ -151,8 +151,8 @@
           chart.addSeries(getSeries(fullData));
           chart.redraw();
         } else {
-//           chart.setSize(3000, 200);
-          chart.setSize(width, 200);
+          chart.setSize(3000, 200);
+//           chart.setSize(width, 200);
           chart.xAxis[0].setExtremes(newRange.min, newRange.max);
                       console.log('item', zoomData);
 //           var chartData = zoomData.filter(function(item) {
