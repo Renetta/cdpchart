@@ -138,7 +138,7 @@
         document.getElementById("inputMS").value = formatInputMS(value);
         document.getElementById("inputMicro").value = formatInputMicro(value);
         selectePoint = getInputDate();
-        $selectedDate.text(formatDate(value));
+        $selectedDate.text(formatDate(selectePoint));
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
