@@ -57,15 +57,13 @@
       return moment(date).format('HH:mm:ss');
     }
     
-//     function formatInputMS(date) {
-//       return moment(date).format('SS') + ' ' +
-//         parseInt((date - parseInt(date, 10)) * 1000, 10);
-//     }
+    function formatInputMS(date) {
+      return moment(date).format('SS');
+    }
     
-//     function formatInputMS(date) {
-//       return moment(date).format('SSS') + ' ' +
-//         parseInt((date - parseInt(date, 10)) * 1000, 10);
-//     }
+    function formatInputMS(date) {
+      return moment(date).format('SSS');
+    }
 
     var chartDiv = $('#chart');
 
