@@ -5,6 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>CDP Chart</title>
   <link rel="stylesheet" type="text/css" href="page.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
 
 <body>
@@ -17,12 +18,17 @@
         Zoom: (<span class="zoom">full</span>) <button type="button" class="plus"> + </button>
         <button type="button" class="minus"> - </button>
       </span>
-          <div>
+      <div>
         Journal Timestamp:
       <div style="padding-right: 0">
-          <input type="text" bs-datepicker ng-model="formItem.cdpDate" ng-change="cdpJournalName(formItem.cdpDate,formItem.cdpMilliSeconds,formItem.cdpMicroSeconds)" min-date="{{journalRange.minDate.getTime()}}"
-            max-date="{{journalRange.maxDate.getTime()}}" date-format="yyyy-MM-dd" name="cdpTimestamp"/>
+          <input type="text" bs-datepicker ng-model="formItem.cdpDate" 
+                 ng-change="cdpJournalName(formItem.cdpDate,formItem.cdpMilliSeconds,formItem.cdpMicroSeconds)" 
+                 min-date="{{journalRange.minDate.getTime()}}" max-date="{{journalRange.maxDate.getTime()}}" 
+                 date-format="yyyy-MM-dd" name="cdpTimestamp"/>
       </div>
+       <div class="col-sm-2" style="padding: 0 5px">
+            <input type="text" class="form-control" time-format="HH:mm:ss"  bs-timepicker ng-model="formItem.cdpDate" placeholder="Time" />
+        </div> 
     </div>
     </div>
     <div id="chart"></div>
