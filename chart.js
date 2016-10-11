@@ -49,7 +49,6 @@
     }
     
     function formatInputDate(date) {
-      console.log('here', moment(date).format('S'));
       return moment(date).format('YYYY-MM-DD');
     }
     
@@ -61,8 +60,9 @@
       return moment(date).format('SS');
     }
     
-    function formatInputMS(date) {
-      return moment(date).format('S');
+    function formatInputMicro(date) {
+//       return moment(date).format('S');
+        return parseInt((date - parseInt(date, 10)) * 1000, 10);
     }
 
     var chartDiv = $('#chart');
@@ -156,7 +156,7 @@
         document.getElementById("inputDate").value = formatInputDate(value);
         document.getElementById("inputTime").value = formatInputTime(value);
         document.getElementById("inputMS").value = formatInputMS(value);
-        document.getElementById("inputMicro").value = formatInputMS(value);
+        document.getElementById("inputMicro").value = formatInputMicro(value);
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
