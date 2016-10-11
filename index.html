@@ -20,16 +20,26 @@
       </span>
     </div>
     <div class="form-group">
-        Journal Timestamp:
+       <label class="col-sm-3 control-label">Journal Timestamp</label>
       <div class="col-sm-2"  style="padding-right: 0">
-          <input type="text" class="form-control" bs-datepicker ng-model="formItem.cdpDate" 
+          <input type="text" class="form-control" bs-datepicker ng-model="formItem.cdpDate" placeholder="Date" 
                  ng-change="cdpJournalName(formItem.cdpDate,formItem.cdpMilliSeconds,formItem.cdpMicroSeconds)" 
                  min-date="{{journalRange.minDate.getTime()}}" max-date="{{journalRange.maxDate.getTime()}}" 
                  date-format="yyyy-MM-dd" name="cdpTimestamp"/>
       </div>
        <div class="col-sm-2" style="padding: 0 5px">
-            <input type="text" class="form-control" time-format="HH:mm:ss"  bs-timepicker ng-model="formItem.cdpDate" placeholder="Time" />
-        </div> 
+            <input type="text" class="form-control" time-format="HH:mm:ss"  bs-timepicker ng-model="formItem.cdpDate" 
+                   placeholder="Time" />
+        </div>
+      <div class="col-sm-2" style="padding: 0 5px">
+          <input type="text" class="form-control" time-format="HH:mm:ss"
+              bs-timepicker ng-model="formItem.cdpDate" placeholder="Time" />
+      </div>
+      <div class="col-sm-2" style="padding: 0 5px">
+          <input type="number" ng-pattern="patterns.number && patterns.noDecimal" ng-model="formItem.cdpMilliSeconds"
+                 ng-change="cdpJournalName(formItem.cdpDate,formItem.cdpMilliSeconds,formItem.cdpMicroSeconds)" min="0" max="999"
+              class="form-control" placeholder="Milliseconds" />
+      </div>
     </div>
     <div id="chart"></div>
       <div class="graph-range clearfix"></div>
