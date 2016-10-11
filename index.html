@@ -18,8 +18,17 @@
         <button type="button" class="minus"> - </button>
       </span>
     </div>
+    <div>
+        <label class="col-sm-3 control-label">Journal Timestamp</label>
+      <div class="col-sm-2" style="padding-right: 0">
+          <input type="text"  class="form-control" bs-datepicker
+           ng-model="formItem.cdpDate" ng-change="cdpJournalName(formItem.cdpDate,formItem.cdpMilliSeconds,formItem.cdpMicroSeconds)" min-date="{{journalRange.minDate.getTime()}}"
+            max-date="{{journalRange.maxDate.getTime()}}"
+            date-format="yyyy-MM-dd" name="cdpTimestamp"/>
+      </div>
+    </div>
     <div id="chart"></div>
-      <div data-container="body" class="graph-range clearfix"></div>
+      <div class="graph-range clearfix"></div>
   </div>
   <script src="//code.jquery.com/jquery-1.9.1.js"></script>
   <script src="//code.highcharts.com/highcharts.js"></script>
