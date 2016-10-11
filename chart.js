@@ -153,8 +153,9 @@
           chart.setSize(width, 200);
           chart.xAxis[0].setExtremes(newRange.min, newRange.max);
           var chartData = zoomData.filter(function(item) {
-            return item[0] >= newRange.min && item[0] <= newRange.max;
+            return item[0] > newRange.min && item[0] < newRange.max;
           });
+          console.log('chartData', chartData);
           chart.addSeries(getSeries(chartData));
         }
 
