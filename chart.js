@@ -113,6 +113,12 @@
       var selectePoint = null;
       var inputDataPoint = null;
       
+      function getInputDate() {
+        var inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
+          ' ' + document.getElementById("inputMicro").value;
+        return moment(inputDate).unix() * 1000;
+      }
+      
       function clickHandler(evt) {
         var axis = chart.xAxis[0];
         console.log('axis', axis);
@@ -127,11 +133,12 @@
         }
 
         selectePoint = value;
-        $selectedDate.text(formatDate(value));
         document.getElementById("inputDate").value = formatInputDate(value);
         document.getElementById("inputTime").value = formatInputTime(value);
         document.getElementById("inputMS").value = formatInputMS(value);
         document.getElementById("inputMicro").value = formatInputMicro(value);
+        selectePoint = getInputDate();
+        $selectedDate.text(formatDate(value));
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
@@ -198,12 +205,6 @@
 
           chartDiv.scrollLeft(left);
         }, 200);
-      }
-      
-      function getInputDate() {
-        var inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
-          ' ' + document.getElementById("inputMicro").value;
-        return moment(inputDate).unix() * 1000;
       }
       
       function changeZoom(timeDiff) {
