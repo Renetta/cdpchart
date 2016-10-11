@@ -116,7 +116,7 @@
       function getInputDate() {
         var inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
           ' ' + document.getElementById("inputMicro").value;
-        console.log(inputDate);
+        if (!inputDate) return;
         return moment(inputDate).unix() * 1000;
       }
       
