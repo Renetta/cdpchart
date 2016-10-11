@@ -115,6 +115,7 @@
       
       function clickHandler(evt) {
         var axis = chart.xAxis[0];
+        console.log('axis', axis);
         axis.removePlotLine('marker');
         var value;
         if (evt.xAxis) {
