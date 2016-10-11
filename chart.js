@@ -31,10 +31,10 @@
     return 5;
   }
 //   var $inputDate = $('.inputDate');
-//   function getInputDate() {
-//     inputDate = document.getElementById('inputDate').value;
-//     console.log('input', inputDate);
-//   }
+  function getInputDate() {
+    var inputDate = document.getElementById('inputDate').value;
+    console.log('input', inputDate);
+  }
 
   $(function () {
     function dataMapperSecond(item) {
