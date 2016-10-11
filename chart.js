@@ -58,15 +58,15 @@
         parseInt((date - parseInt(date, 10)) * 1000, 10);
     }
     
-    function formatInputMS(date) {
-      return moment(date).format('SS') + ' ' +
-        parseInt((date - parseInt(date, 10)) * 1000, 10);
-    }
+//     function formatInputMS(date) {
+//       return moment(date).format('SS') + ' ' +
+//         parseInt((date - parseInt(date, 10)) * 1000, 10);
+//     }
     
-    function formatInputMS(date) {
-      return moment(date).format('SSS') + ' ' +
-        parseInt((date - parseInt(date, 10)) * 1000, 10);
-    }
+//     function formatInputMS(date) {
+//       return moment(date).format('SSS') + ' ' +
+//         parseInt((date - parseInt(date, 10)) * 1000, 10);
+//     }
 
     var chartDiv = $('#chart');
 
@@ -156,11 +156,10 @@
         selectePoint = value;
         $selectedDate.text(formatDate(value));
         console.log('selected date', formatInputDate(value));
-//         $inputDate.text(formatInputDate(value));
         document.getElementById("inputDate").value = formatInputDate(value);
         document.getElementById("inputTime").value = formatInputTime(value);
-        document.getElementById("inputMS").value = formatInputMS(value);
-        document.getElementById("inputMicro").value = formatInputMS(value);
+//         document.getElementById("inputMS").value = formatInputMS(value);
+//         document.getElementById("inputMicro").value = formatInputMS(value);
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
