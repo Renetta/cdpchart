@@ -198,11 +198,23 @@
           chartDiv.scrollLeft(left);
         }, 200);
       }
+      
+      function dateToTimeStamp(d, t) {
+          var year = d.getFullYear() - 2000;
+          var month = d.getMonth();
+          var day = d.getDate();
+          var hour = d.getHours();
+          var min = d.getMinutes();
+          var sec = d.getSecons();
+          var millisec = d.getMilliseconds();
+          var time = (year << 24) | (month << 18) | (day << 12) | (hour << 6) | min | sec | millisec;
+          return time;
+      };
               
       function getInputDate() {
         var inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
           ' ' + document.getElementById("inputMicro").value;
-        console.log('inputsdfsd', inputDate);
+        console.log('inputsdfsd', dateToTimeStamp(inputDate));
       }
       
       function changeZoom(timeDiff) {
