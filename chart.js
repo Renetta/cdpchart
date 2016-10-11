@@ -114,7 +114,8 @@
       var inputDataPoint = null;
       
       function getInputDate() {
-        var inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
+        var inputDate = null;
+        inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
           ' ' + document.getElementById("inputMicro").value;
         if (!inputDate) return;
         return moment(inputDate).unix() * 1000;
