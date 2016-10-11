@@ -197,6 +197,8 @@
         if (currentZoom === 0) {
           newRange = $.extend(newRange, range);
         } else if (currentZoom === 1) {
+          console.log('min', parseInt(selectePoint - (zoom.range / 2), 5));
+          console.log('max', parseInt(selectePoint + (zoom.range / 2), 5));
           newRange = {
             min: parseInt(selectePoint - (zoom.range / 2), 5),
             max: parseInt(selectePoint + (zoom.range / 2), 5),
