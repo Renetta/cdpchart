@@ -56,10 +56,12 @@
       var chart;
       var zoomData = [];
 
+//       $.get('second-data.json', function(response){
+//         zoomData = response.map(dataMapper);
+//       }, 'json');
       $.get('second-data.json', function(response){
-        zoomData = response.map(dataMapper);
+        zoomData = response;
       }, 'json');
-
       var range = {
         min: 1473949967000,
         max: 1473950567000,
