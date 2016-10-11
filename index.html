@@ -17,13 +17,13 @@
         Zoom: (<span class="zoom">full</span>) <button type="button" class="plus"> + </button>
         <button type="button" class="minus"> - </button>
       </span>
-    </div>
-    <div>
+          <div>
         Journal Timestamp:
       <div style="padding-right: 0">
           <input type="text" bs-datepicker ng-model="formItem.cdpDate" ng-change="cdpJournalName(formItem.cdpDate,formItem.cdpMilliSeconds,formItem.cdpMicroSeconds)" min-date="{{journalRange.minDate.getTime()}}"
             max-date="{{journalRange.maxDate.getTime()}}" date-format="yyyy-MM-dd" name="cdpTimestamp"/>
       </div>
+    </div>
     </div>
     <div id="chart"></div>
       <div class="graph-range clearfix"></div>
