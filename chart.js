@@ -200,7 +200,7 @@
           console.log('min', parseInt(selectePoint - (zoom.range / 2), 5));
           console.log('max', parseInt(selectePoint + (zoom.range / 2), 5));
            console.log('min', parseInt(selectePoint));
-          console.log('max', parseInt(selectePoint + (zoom.range / 2), 5));
+          console.log('max', parseInt(selectePoint + (zoom.range / 2)));
           newRange = {
             min: parseInt(selectePoint, 5),
             max: parseInt(selectePoint + (zoom.range / 2), 5),
