@@ -129,7 +129,7 @@
         $selectedDate.text(formatDate(value));
         console.log('selected date', formatInputDate(value));
 //         $inputDate.text(formatInputDate(value));
-        document.getElementById("$inputDate").value = formatInputDate(value);
+        document.getElementById("inputDate").value = formatInputDate(value);
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
