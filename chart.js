@@ -112,30 +112,6 @@
       var currentZoom = 0;
       var selectePoint = null;
       var inputDataPoint = null;
-
-//       $('inputDate').on('click', function() {
-//         $inputDate = document.getElementById('inputDate').value;
-//         console.log('inputsdfsd', $inputDate);
-//       });
-      
-//       $('inputTime').on('click', function() {
-//         $inputTime = document.getElementById('inputTime').value;
-//         console.log('inputsdfsd', $inputTime);
-//       });
-      
-//       $('inputMS').on('click', function() {
-//         $inputMS = document.getElementById('inputMS').value;
-//         console.log('inputsdfsd', $inputMS);
-//       });
-      
-//        $('inputMicro').on('click', function() {
-//         $inputMS = document.getElementById('inputMicro').value;
-//         console.log('inputsdfsd', $inputMicro);
-//       });
-      
-//       $('button.inputData').on('click', function(){
-//         changeZoom(-1);
-//       });
       
       function clickHandler(evt) {
         var axis = chart.xAxis[0];
@@ -233,7 +209,7 @@
         if (!selectePoint) {
           return;
         }
-        
+        console.log('selectePoint', selectePoint);
         inputDataPoint = getInputDate();
 
         currentZoom += timeDiff;
