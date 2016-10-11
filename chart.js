@@ -214,6 +214,15 @@
 
         inputDataPoint = getInputDate();
         selectePoint = inputDataPoint;
+        $selectedDate.text(formatDate(value));
+        var axis = chart.xAxis[0];
+        axis.addPlotLine({
+          id: 'marker',
+          color: 'red',
+          width: 1,
+          value: value,
+          zIndex: 5,
+        });
         currentZoom += timeDiff;
         if (currentZoom > zoomList.length - 1) {
           currentZoom = zoomList.length - 1;
