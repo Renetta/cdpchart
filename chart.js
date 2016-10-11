@@ -220,7 +220,8 @@
         if (newRange.max > range.max) {
           newRange.max = range.max;
         }
-        console.log('new', newRange);
+        console.log('newmin', formatDate(newRange.min));
+        console.log('newmax', formatDate(newRange.max));
         $('.graph-range').html(graphRangeTemplate({
           min: formatDate(newRange.min),
           max: formatDate(newRange.max),
