@@ -93,6 +93,7 @@
       }));
 
       var $selectedDate = $('.selected-point .date');
+      var $inputDate = $('.inputDate');
       var $selectedZoom = $('.zoom');
       var currentZoom = 0;
       var selectePoint = null;
@@ -112,6 +113,7 @@
         selectePoint = value;
         $selectedDate.text(formatDate(value));
         console.log('selected date', formatInputDate(value));
+        $inputDate.text(formatInputDate(value));
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
@@ -119,6 +121,10 @@
           value: value,
           zIndex: 5,
         });
+      }
+      
+      function getDate() {
+        inputDate = document.getElementById('inputDate');
       }
 
       function getSeries(data) {
