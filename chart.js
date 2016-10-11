@@ -117,7 +117,8 @@
         var inputDate = null;
         inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
           ' ' + document.getElementById("inputMicro").value;
-        if (!inputDate) return null;
+        console.log(inputDate);
+        if (inputDate == null) return null;
         return moment(inputDate).unix() * 1000;
       }
       
