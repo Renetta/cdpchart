@@ -31,10 +31,10 @@
     return 5;
   }
 //   var $inputDate = $('.inputDate');
-  function getInputDate() {
-    var inputDate = document.getElementById('inputDate').value;
-    console.log('input', inputDate);
-  }
+//   function getInputDate() {
+//     var inputDate = document.getElementById('inputDate').value;
+//     console.log('input', inputDate);
+//   }
 
   $(function () {
     function dataMapperSecond(item) {
@@ -108,6 +108,11 @@
         console.log('inputsdfsd', inputDate);
       }
       
+      $('inputDate').on('click', function() {
+        $inputDate = document.getElementById('inputDate').value;
+        console.log('inputsdfsd', inputDate);
+      });
+      
       function clickHandler(evt) {
         var axis = chart.xAxis[0];
         axis.removePlotLine('marker');
@@ -123,7 +128,8 @@
         selectePoint = value;
         $selectedDate.text(formatDate(value));
         console.log('selected date', formatInputDate(value));
-        $inputDate.text(formatInputDate(value));
+//         $inputDate.text(formatInputDate(value));
+        document.getElementById("$inputDate").value = formatInputDate(value);
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
