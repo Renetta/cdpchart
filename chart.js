@@ -294,8 +294,8 @@
           enabled: true,
           formatter: function() {
             var d = new Date(this.x);
-            return '<b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
-              d.getMilliseconds() + ': ' + values[this.y];
+            return '<span style="overflow: visible;"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
+              d.getMilliseconds() + ': ' + values[this.y] + '</span>';
           }
         },
         credits: {
