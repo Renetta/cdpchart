@@ -43,18 +43,8 @@
     var rangeTemplate = Handlebars.compile('{{min}} - {{max}}');
     var graphRangeTemplate = Handlebars.compile('<b>Min: </b><span>{{min}}</span> <span class="pull-right"><b>Max:</b>{{max}}</span>');
 
-//     function formatDate(date) {
-//       return moment(date).format('YYYY-MM-DD HH:mm:ss SSS') + ' ' +
-//         parseInt((date - parseInt(date, 10)) * 1000, 10);
-//     }
-     function formatDate(date) {
-       var dateTime = moment(date).format('YYYY-MM-DD HH:mm:ss');
-       var milliSec = moment(date).format('SSS');
-       var microSec = parseInt((date - parseInt(date, 10)) * 1000, 10);
-//       return moment(date).format('YYYY-MM-DD HH:mm:ss SSS') + ' ' +
-//         parseInt((date - parseInt(date, 10)) * 1000, 10);
-       console.log(dateTime + ' ' + milliSec + ' ' + microSec);
-       return dateTime + ' ' + milliSec + ' ' + microSec;
+    function formatDate(date) {
+      return moment(date).format('YYYY-MM-DD HH:mm:ss SSS') + ' ' + parseInt((date - parseInt(date, 10)) * 1000, 10);
     }
     
     function formatInputDate(date) {
@@ -125,7 +115,7 @@
       function getInputDate() {
         var inputDate = null;
         inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
-          ' ' + document.getElementById("inputMicro").value;
+          ' ' + document.getElementById("inputMicro").value * 1000;
         return moment(inputDate).unix();
       }
       
