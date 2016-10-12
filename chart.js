@@ -305,7 +305,7 @@
 //             borderWidth: 0,
 //             borderRadius: 0,
           formatter: function() {
-            console.log(chart);
+            console.log(chart.mouseDownX);
             var d = new Date(this.x);
             return '<span style="position: relative"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
               d.getMilliseconds() + ': ' + values[this.y] + '</span>';
@@ -314,18 +314,18 @@
 //                 return { x: 150, y: 35 };
 //             },
             positioner: function (labelWidth, labelHeight, point) {
-            var tooltipX, tooltipY;
-            if (point.plotX + chart.plotLeft < labelWidth && point.plotY + labelHeight > chart.plotHeight) {
-                tooltipX = chart.plotLeft;
-                tooltipY = chart.plotTop + chart.plotHeight - 2 * labelHeight - 10;
-            } else {
-                tooltipX = chart.plotLeft;
-                tooltipY = chart.plotTop + chart.plotHeight - labelHeight;
-            }
-            return {
-                x: tooltipX,
-                y: tooltipY
-            };
+                var tooltipX, tooltipY;
+                if (point.plotX + chart.plotLeft < labelWidth && point.plotY + labelHeight > chart.plotHeight) {
+                    tooltipX = chart.plotLeft;
+                    tooltipY = chart.plotTop + chart.plotHeight - 2 * labelHeight - 10;
+                } else {
+                    tooltipX = chart.plotLeft;
+                    tooltipY = chart.plotTop + chart.plotHeight - labelHeight;
+                }
+                return {
+                    x: tooltipX,
+                    y: tooltipY
+                };
           },
             shadow: true
         },
