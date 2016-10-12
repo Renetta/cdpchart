@@ -48,8 +48,13 @@
 //         parseInt((date - parseInt(date, 10)) * 1000, 10);
 //     }
      function formatDate(date) {
-      return moment(date).format('YYYY-MM-DD HH:mm:ss') + ' ' + moment(date).format('SSS') + ' ' +
-        parseInt((date - parseInt(date, 10)) * 1000, 10);
+       var dateTime = moment(date).format('YYYY-MM-DD HH:mm:ss');
+       var milliSec = moment(date).format('SSS');
+       var microSec = parseInt((date - parseInt(date, 10)) * 1000, 10);
+//       return moment(date).format('YYYY-MM-DD HH:mm:ss SSS') + ' ' +
+//         parseInt((date - parseInt(date, 10)) * 1000, 10);
+       console.log(dateTime + ' ' + milliSec + ' ' + microSec);
+       return dateTime + ' ' + milliSec + ' ' + microSec;
     }
     
     function formatInputDate(date) {
