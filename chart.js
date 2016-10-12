@@ -294,13 +294,13 @@
           enabled: true,
           useHTML: true,
           formatter: function() {
-            var point = this.point,
-            series = point.series;
-            var color = point.color || series.color,
-            $tooltip = $(series.chart.container).find('.highcharts-tooltip');
-            $tooltip.css('border-color', color);
+//             var point = this.point,
+//             series = point.series;
+//             var color = point.color || series.color,
+//             $tooltip = $(series.chart.container).find('.highcharts-tooltip');
+//             $tooltip.css('border-color', color);
             var d = new Date(this.x);
-            return '<span style="overflow: visible;"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
+            return '<span style="position: relative"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
               d.getMilliseconds() + ': ' + values[this.y] + '</span>';
           }
         },
