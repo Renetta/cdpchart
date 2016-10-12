@@ -287,6 +287,7 @@
             click: clickHandler,
           },
         },
+        container: '.container',
         title: {
           text: '',
         },
