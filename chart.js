@@ -45,7 +45,6 @@
 
     function formatDate(date) {
       return moment(date).format('YYYY-MM-DD HH:mm:ss SSS') + ' ' + parseInt((date - parseInt(date, 10)) * 1000, 10);
-//       return moment(date).format('x');
     }
     
     function formatInputDate(date) {
@@ -117,16 +116,18 @@
         var inputDate = null;
         inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
           ' ' + document.getElementById("inputMicro").value;
-        console.log(inputDate);
-        return moment(inputDate).unix() * 1000;
-//         return moment(inputDate).format('x');
+        return moment(inputDate).format('x');
+      }
+      
+      function getDatefromTimestamp(point) {
+        return document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
+          ' ' + document.getElementById("inputMicro").value;
       }
       
       function plotSelectedPoint(point) {
-        console.log('point', point);
         var axis = chart.xAxis[0];
         axis.removePlotLine('marker');
-        $selectedDate.text(formatDate(point));
+        $selectedDate.text(getDatefromTimestamp());
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
