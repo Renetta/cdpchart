@@ -74,9 +74,13 @@
         zoomData = response.map(dataMapper);
       }, 'json');
 
+//       var range = {
+//         min: 1471533282000,
+//         max: 1474404238000,
+//       };
       var range = {
-        min: 1471533282000,
-        max: 1474404238000,
+        min: 1473949967000,
+        max: 1473954044000,
       };
 
       var zoomList = [{
