@@ -11,7 +11,7 @@ body {
 
 #chart {
   width: 100%;
-  overflow: auto;
+  overflow-x: auto;
   margin: 20px 0;
 }
 
@@ -27,8 +27,4 @@ body {
 
 button {
   padding: 10px;
-}
-
-.highcharts-chart{
-    overflow:visible;
 }
