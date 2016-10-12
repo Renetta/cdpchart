@@ -155,8 +155,8 @@
         document.getElementById("inputTime").value = formatInputTime(value);
         document.getElementById("inputMS").value = formatInputMS(value);
         document.getElementById("inputMicro").value = formatInputMicro(value);
-        selectePoint = getInputDate();
-        plotSelectedPoint(selectePoint);
+//         selectePoint = getInputDate();
+//         plotSelectedPoint(selectePoint);
       }
       
       function getSeries(data) {
