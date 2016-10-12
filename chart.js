@@ -294,8 +294,6 @@
           enabled: true,
           formatter: function() {
             var d = new Date(this.x);
-            $('#tooltip').html('<b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
-              d.getMilliseconds() + ': ' + values[this.y]);
             return '<b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
               d.getMilliseconds() + ': ' + values[this.y];
           }
