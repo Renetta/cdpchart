@@ -305,6 +305,7 @@
 //             borderWidth: 0,
 //             borderRadius: 0,
           formatter: function() {
+            console.log(chart);
             console.log(chart.mouseDownX);
             var d = new Date(this.x);
             return '<span style="position: relative"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
