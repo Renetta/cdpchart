@@ -42,6 +42,6 @@ button {
 /*     visibility: hidden; */
 }
 
-.custom-tooltip .highcharts-container .highcharts-tooltip span {
+.custom-tooltip .highcharts-container .highcharts-tooltip {
     position: static!important;
 }
