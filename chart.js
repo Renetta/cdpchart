@@ -292,18 +292,31 @@
           text: '',
         },
         tooltip: {
-          enabled: true,
-          useHTML: true,
+//           enabled: true,
+//           useHTML: true,
+          
+//           formatter: function() {
+
+//             var d = new Date(this.x);
+//             return '<span style="position: relative"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
+//               d.getMilliseconds() + ': ' + values[this.y] + '</span>';
+//           }
+            backgroundColor: 'white',
+            borderWidth: 0,
+            borderRadius: 0,
+//             headerFormat: '{this.series.name} ',
+//             pointFormat: '<br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
+//               d.getMilliseconds() + ': ' + values[this.y]',
           formatter: function() {
-//             var point = this.point,
-//             series = point.series;
-//             var color = point.color || series.color,
-//             $tooltip = $(series.chart.container).find('.highcharts-tooltip');
-//             $tooltip.css('border-color', color);
+
             var d = new Date(this.x);
             return '<span style="position: relative"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
               d.getMilliseconds() + ': ' + values[this.y] + '</span>';
-          }
+          },
+            positioner: function () {
+                return { x: 10, y: 35 };
+            },
+            shadow: true
         },
         credits: {
           enabled: false,
