@@ -298,15 +298,17 @@
 //             return '<span style="overflow: visible;"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
 //               d.getMilliseconds() + ': ' + values[this.y] + '</span>';
 //           }
-           formatter: function() {
-              return '< div class ="tooltipContainer"> Tooltip content here < /div >';
-          },
-          useHTML: true,
-          shared: false,
-          borderRadius: 0,
-          borderWidth: 0,
-          shadow: false,
-          backgroundColor: 'none',
+            useHTML: true,
+            shared: false,
+            borderRadius: 0,
+            borderWidth: 0,
+            shadow: false,
+            backgroundColor: 'none',
+            overflow: visible,
+            formatter: function() {
+               return '< div class ="tooltipContainer"> Tooltip content here < /div >';
+            },
+
         },
         credits: {
           enabled: false,
