@@ -130,6 +130,7 @@
       }
       
       function plotSelectedPoint(point) {
+        console.log('point', point);
         var axis = chart.xAxis[0];
         axis.removePlotLine('marker');
         $selectedDate.text(formatDate(point));
