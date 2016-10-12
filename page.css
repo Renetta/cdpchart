@@ -38,10 +38,10 @@ button {
     background-color: #fff;
     background-color: rgba(255, 255, 255, .8);
     opacity: 0.9;
-  overflow: visible!important;
+  overflow: auto;
 /*     visibility: hidden; */
 }
 
 .custom-tooltip .highcharts-container .highcharts-tooltip {
-    position: static!important;
+    position: relative;
 }
