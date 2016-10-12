@@ -301,6 +301,8 @@
            borderWidth: 0,
            useHTML: true,
            formatter: function () {
+             var point = this.point,
+                     series = point.series
              $tooltip = $(series.chart.container)
                              .find('.highcharts-tooltip');
              return '<span style="overflow: visible;"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
