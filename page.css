@@ -28,3 +28,19 @@ body {
 button {
   padding: 10px;
 }
+.custom-tooltip .highcharts-container {
+    overflow: visible!important;
+}
+.custom-tooltip .highcharts-container .highcharts-tooltip {
+    border: 2px solid;
+    border-radius(2px);
+    padding: 4px 6px;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, .8);
+    opacity: 0.9;
+    visibility: hidden;
+}
+
+.custom-tooltip .highcharts-container .highcharts-tooltip span {
+    position: static!important;
+}
