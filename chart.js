@@ -127,8 +127,8 @@
       function plotSelectedPoint(point) {
         var axis = chart.xAxis[0];
         axis.removePlotLine('marker');
-//         $selectedDate.text(getDatefromTimestamp());
-        $selectedDate.text(formatDate(point));
+        $selectedDate.text(getDatefromTimestamp());
+//         $selectedDate.text(formatDate(point));
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
