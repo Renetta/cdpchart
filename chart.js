@@ -299,14 +299,14 @@
 //               d.getMilliseconds() + ': ' + values[this.y] + '</span>';
 //           }
             useHTML: true,
-            shared: false,
-            borderRadius: 0,
-            borderWidth: 0,
-            shadow: false,
-            backgroundColor: 'none',
-            overflow: visible,
+//             shared: false,
+//             borderRadius: 0,
+//             borderWidth: 0,
+//             shadow: false,
+//             backgroundColor: 'none',
+            
             formatter: function() {
-               return '< div class ="tooltipContainer"> Tooltip content here < /div >';
+               return '<div class ="tooltipContainer" style="overflow: visible;"> Tooltip content here </div>';
             },
 
         },
