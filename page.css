@@ -29,6 +29,6 @@ button {
   padding: 10px;
 }
 
-.highcharts-container{
+.highcharts-chart{
     overflow:visible !important;
 }
