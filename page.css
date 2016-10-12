@@ -29,9 +29,6 @@ button {
   padding: 10px;
 }
 
-svg{
-    overflow:visible !important;
-}
 .highcharts-container{
     overflow:visible !important;
 }
