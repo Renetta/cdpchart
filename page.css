@@ -28,3 +28,7 @@ body {
 button {
   padding: 10px;
 }
+
+svg{
+    overflow:visible !important;
+}
