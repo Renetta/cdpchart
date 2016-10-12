@@ -35,3 +35,6 @@ svg{
 .highcharts-container{
     overflow:visible !important;
 }
+.highcharts-container.highcharts-tooltip{
+    overflow:visible !important;
+}
