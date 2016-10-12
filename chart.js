@@ -306,7 +306,7 @@
 //             backgroundColor: 'none',
             overflow: visible,
             formatter: function() {
-               return '<div class ="tooltipContainer" style="overflow: visible;"> Tooltip content here </div>';
+               return '<div class ="tooltipContainer" style="overflow: visible;position: relative;"> Tooltip content here </div>';
             },
 
         },
