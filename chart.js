@@ -295,8 +295,8 @@
           useHTML: true,
           formatter: function() {
             var point = this.point,
-            series = point.series
-            color = point.color || series.color,
+            series = point.series;
+            var color = point.color || series.color,
             $tooltip = $(series.chart.container).find('.highcharts-tooltip');
             $tooltip.css('border-color', color);
             var d = new Date(this.x);
