@@ -31,7 +31,7 @@ button {
 /* .custom-tooltip .highcharts-container {
     overflow: visible!important;
 } */
-.custom-tooltip .highcharts-container .highcharts-tooltip {
+.custom-tooltip .highcharts-tooltip {
     border: 2px solid;
     border-radius(2px);
     padding: 4px 6px;
