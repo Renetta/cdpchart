@@ -116,7 +116,7 @@
         var inputDate = null;
         inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
           ' ' + document.getElementById("inputMicro").value;
-        return moment(inputDate).format('x');
+        return moment(inputDate).unix() * 1000;
       }
       
       function getDatefromTimestamp(point) {
@@ -127,7 +127,8 @@
       function plotSelectedPoint(point) {
         var axis = chart.xAxis[0];
         axis.removePlotLine('marker');
-        $selectedDate.text(getDatefromTimestamp());
+//         $selectedDate.text(getDatefromTimestamp());
+        $selectedDate.text(formatDate(point));
         axis.addPlotLine({
           id: 'marker',
           color: 'red',
