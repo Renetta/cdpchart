@@ -32,6 +32,6 @@ button {
 svg{
     overflow:visible !important;
 }
-.highcharts-chart{
+.highcharts-container{
     overflow:visible !important;
 }
