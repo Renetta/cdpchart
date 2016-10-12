@@ -291,12 +291,22 @@
           text: '',
         },
         tooltip: {
-          enabled: true,
-          formatter: function() {
-            var d = new Date(this.x);
-            return '<span style="overflow: visible;"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
-              d.getMilliseconds() + ': ' + values[this.y] + '</span>';
-          }
+//           enabled: true,
+//           useHTML: true,
+//           formatter: function() {
+//             var d = new Date(this.x);
+//             return '<span style="overflow: visible;"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
+//               d.getMilliseconds() + ': ' + values[this.y] + '</span>';
+//           }
+           formatter: function() {
+              < div class ="tooltipContainer"> Tooltip content here < /div >
+          },
+          useHTML: true,
+          shared: false,
+          borderRadius: 0,
+          borderWidth: 0,
+          shadow: false,
+          backgroundColor: 'none',
         },
         credits: {
           enabled: false,
