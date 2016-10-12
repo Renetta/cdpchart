@@ -299,7 +299,7 @@
 //               d.getMilliseconds() + ': ' + values[this.y] + '</span>';
 //           }
            formatter: function() {
-              < div class ="tooltipContainer"> Tooltip content here < /div >
+              return '< div class ="tooltipContainer"> Tooltip content here < /div >';
           },
           useHTML: true,
           shared: false,
