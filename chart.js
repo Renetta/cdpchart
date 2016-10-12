@@ -298,17 +298,15 @@
 //             return '<span style="overflow: visible;"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
 //               d.getMilliseconds() + ': ' + values[this.y] + '</span>';
 //           }
-            useHTML: true,
-            shared: true,
-//             borderRadius: 0,
-//             borderWidth: 0,
-//             shadow: false,
-//             backgroundColor: 'none',
-            overflow: visible,
-            formatter: function() {
-               return '<div class ="tooltipContainer" style="overflow: visible;position: relative;"> Tooltip content here </div>';
-            },
+           borderWidth: 0,
+           useHTML: true,
+           formatter: function () {
+             $tooltip = $(series.chart.container)
+                             .find('.highcharts-tooltip');
+             return '<span style="overflow: visible;"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
+              d.getMilliseconds() + ': ' + values[this.y] + '</span>';
 
+           },
         },
         credits: {
           enabled: false,
