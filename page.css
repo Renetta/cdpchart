@@ -30,5 +30,5 @@ button {
 }
 
 .highcharts-chart{
-    overflow:visible !important;
+    overflow:visible;
 }
