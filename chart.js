@@ -292,8 +292,8 @@
           text: '',
         },
         tooltip: {
-//           enabled: true,
-//           useHTML: true,
+          enabled: true,
+          useHTML: true,
           
 //           formatter: function() {
 
@@ -312,22 +312,22 @@
 //             positioner: function () {
 //                 return { x: 150, y: 35 };
 //             },
-            positioner: function (labelWidth, labelHeight, point) {
-              console.log(chart.plotHeight);
-                var tooltipX, tooltipY;
-                if (point.plotX + chart.plotLeft < labelWidth && point.plotY + labelHeight > chart.plotHeight) {
-                    tooltipX = chart.plotLeft;
-                    tooltipY = chart.plotTop + chart.plotHeight - 2 * labelHeight - 10;
-                } else {
-                    tooltipX = chart.plotLeft;
-                    tooltipY = chart.plotTop + chart.plotHeight - labelHeight;
-                }
-                return {
-                    x: tooltipX,
-                    y: tooltipY
-                };
-          },
-            shadow: true
+//             positioner: function (labelWidth, labelHeight, point) {
+//               console.log(chart.plotHeight);
+//                 var tooltipX, tooltipY;
+//                 if (point.plotX + chart.plotLeft < labelWidth && point.plotY + labelHeight > chart.plotHeight) {
+//                     tooltipX = chart.plotLeft;
+//                     tooltipY = chart.plotTop + chart.plotHeight - 2 * labelHeight - 10;
+//                 } else {
+//                     tooltipX = chart.plotLeft;
+//                     tooltipY = chart.plotTop + chart.plotHeight - labelHeight;
+//                 }
+//                 return {
+//                     x: tooltipX,
+//                     y: tooltipY
+//                 };
+//           },
+            //shadow: true
         },
         credits: {
           enabled: false,
