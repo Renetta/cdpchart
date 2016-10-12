@@ -33,9 +33,7 @@ button {
 svg{
     overflow:visible !important;
 }
-.highcharts-container{
-    overflow:visible !important;
-}
+
 .highcharts-container.highcharts-tooltip{
-    overflow:visible;
+    overflow:visible !important;
 }
