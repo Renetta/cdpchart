@@ -287,12 +287,12 @@
             click: clickHandler,
           },
         },
-        container: '.container',
         title: {
           text: '',
         },
         tooltip: {
           enabled: true,
+          container: '.container',
           formatter: function() {
             var d = new Date(this.x);
             return '<b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
