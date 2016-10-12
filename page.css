@@ -39,6 +39,7 @@ button {
     background-color: rgba(255, 255, 255, .8);
     opacity: 0.9;
     visibility: hidden;
+  overflow: visible;
 }
 
 .custom-tooltip .highcharts-container .highcharts-tooltip span {
