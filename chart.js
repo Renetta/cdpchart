@@ -116,7 +116,8 @@
         var inputDate = null;
         inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
           ' ' + document.getElementById("inputMicro").value;
-        return moment(inputDate).unix() * 1000;
+//         return moment(inputDate).unix() * 1000;
+        return moment(inputDate).format('x');
       }
       
       function plotSelectedPoint(point) {
