@@ -44,7 +44,8 @@
     var graphRangeTemplate = Handlebars.compile('<b>Min: </b><span>{{min}}</span> <span class="pull-right"><b>Max:</b>{{max}}</span>');
 
     function formatDate(date) {
-      return moment(date).format('YYYY-MM-DD HH:mm:ss SSS') + ' ' + parseInt((date - parseInt(date, 10)) * 1000, 10);
+//       return moment(date).format('YYYY-MM-DD HH:mm:ss SSS') + ' ' + parseInt((date - parseInt(date, 10)) * 1000, 10);
+      return moment(date).format('x');
     }
     
     function formatInputDate(date) {
@@ -116,8 +117,8 @@
         var inputDate = null;
         inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
           ' ' + document.getElementById("inputMicro").value;
-//         return moment(inputDate).unix() * 1000;
-        return moment(inputDate).format('x');
+        return moment(inputDate).unix() * 1000;
+//         return moment(inputDate).format('x');
       }
       
       function plotSelectedPoint(point) {
