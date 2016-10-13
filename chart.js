@@ -116,9 +116,9 @@
         var inputDate = null;
         inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
           ' ' + document.getElementById("inputMicro").value;
-//         parseInt((date - parseInt(date, 10)) * 1000, 10)
-        return parseInt((moment(inputDate).unix() - parseInt(moment(inputDate).unix(), 10))  * 1000, 10);
-//            return moment(inputDate).unix() * 1000;
+//         return parseInt((moment(inputDate).unix() - parseInt(moment(inputDate).unix(), 10))  * 1000, 10);
+        console.log(parseInt((moment(inputDate).unix() - parseInt(moment(inputDate).unix(), 10))  * 1000, 10));
+           return moment(inputDate).unix() * 1000;
       }
       
       function getDatefromTimestamp(point) {
