@@ -116,7 +116,8 @@
         var inputDate = null;
         inputDate = document.getElementById('inputDate').value + ' ' + document.getElementById("inputTime").value + ' ' + document.getElementById("inputMS").value +
           ' ' + document.getElementById("inputMicro").value;
-        return moment(inputDate).unix();
+//         parseInt((date - parseInt(date, 10)) * 1000, 10)
+        return parseInt((moment(inputDate).unix() - parseInt((moment(inputDate).unix(), 10)  * 1000, 10);
       }
       
       function getDatefromTimestamp(point) {
@@ -293,41 +294,11 @@
         },
         tooltip: {
           enabled: true,
-          useHTML: true,
-          
-//           formatter: function() {
-
-//             var d = new Date(this.x);
-//             return '<span style="position: relative"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
-//               d.getMilliseconds() + ': ' + values[this.y] + '</span>';
-//           }
-//             backgroundColor: 'white',
-//             borderWidth: 0,
-//             borderRadius: 0,
           formatter: function() {
             var d = new Date(this.x);
             return '<span style="position: relative"><b>' + this.series.name +'</b><br/>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S ', d) +
               d.getMilliseconds() + ': ' + values[this.y] + '</span>';
           },
-//             positioner: function () {
-//                 return { x: 150, y: 35 };
-//             },
-//             positioner: function (labelWidth, labelHeight, point) {
-//               console.log(chart.plotHeight);
-//                 var tooltipX, tooltipY;
-//                 if (point.plotX + chart.plotLeft < labelWidth && point.plotY + labelHeight > chart.plotHeight) {
-//                     tooltipX = chart.plotLeft;
-//                     tooltipY = chart.plotTop + chart.plotHeight - 2 * labelHeight - 10;
-//                 } else {
-//                     tooltipX = chart.plotLeft;
-//                     tooltipY = chart.plotTop + chart.plotHeight - labelHeight;
-//                 }
-//                 return {
-//                     x: tooltipX,
-//                     y: tooltipY
-//                 };
-//           },
-            //shadow: true
         },
         credits: {
           enabled: false,
