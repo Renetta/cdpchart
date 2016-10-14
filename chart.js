@@ -200,24 +200,24 @@
           chart.addSeries(getSeries(chartData));
         }
 
-//         setTimeout(function() {
-//           if (!selectePoint) {
-//              chartDiv.scrollLeft(0);
-//           }
+        setTimeout(function() {
+          if (!selectePoint) {
+             chartDiv.scrollLeft(0);
+          }
 
-//           var extremes = chart.xAxis[0].getExtremes();
-//           var diff = selectePoint - extremes.min;
-//           if (diff <= 0) {
-//             chartDiv.scrollLeft(0);
-//           }
+          var extremes = chart.xAxis[0].getExtremes();
+          var diff = selectePoint - extremes.min;
+          if (diff <= 0) {
+            chartDiv.scrollLeft(0);
+          }
 
-//           var left = (chartDiv.find('div').width() * diff / (extremes.max - extremes.min)) - 300;
-//           if (left  <= 0) {
-//             chartDiv.scrollLeft(0);
-//           }
+          var left = (chartDiv.find('div').width() * diff / (extremes.max - extremes.min)) - 300;
+          if (left  <= 0) {
+            chartDiv.scrollLeft(0);
+          }
 
-//           chartDiv.scrollLeft(left);
-//         }, 200);
+          chartDiv.scrollLeft(left);
+        }, 200);
       }
       
       function changeZoom(timeDiff) {
