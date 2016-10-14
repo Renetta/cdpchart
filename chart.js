@@ -322,6 +322,7 @@
             for(var i = 0; i < 20; i++) {
               positions.push(min + (tiks * i));
             }
+            console.log(positions);
             return positions;
           },
           labels: {
