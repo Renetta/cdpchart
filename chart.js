@@ -82,8 +82,8 @@
       var zoomList = [{
         title: 'Full',
       }, {
-        title: '1 Minutes',
-        range: 1 * 60 * 1000,
+        title: '10 Minutes',
+        range: 10 * 60 * 1000,
       }, {
         title: '1 Second',
         range: 1000,
