@@ -75,15 +75,15 @@
       }, 'json');
 
       var range = {
-        min: 1471533282000,
-        max: 1474404238000,
+        min: 1479233896000,
+        max: 1479236432373,
       };
 
       var zoomList = [{
         title: 'Full',
       }, {
-        title: '10 Minutes',
-        range: 10 * 60 * 1000,
+        title: '1 Minutes',
+        range: 1 * 60 * 1000,
       }, {
         title: '1 Second',
         range: 1000,
